@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <statusListener class="ch.qos.logback.core.status.NopStatusListener" />
+
+    <include resource="logback/console-appender.xml"/>
+
+    <springProfile name="local | staging">
+        <logger name="dev.poporo.websocketchat" level="DEBUG">
+            <appender-ref ref="CONSOLE"/>
+        </logger>
+
+        <logger name="org.springframework" level="INFO">
+            <appender-ref ref="CONSOLE"/>
+        </logger>
+
+        <logger name="p6spy" level="INFO">
+            <appender-ref ref="CONSOLE"/>
+        </logger>
+    </springProfile>
+
+    <springProfile name="prod">
+        <include resource="logback/file-appender.xml"/>
+        <include resource="logback/ecs-file-appender.xml"/>
+
+        <root level="INFO">
+            <appender-ref ref="INFO_FILE"/>
+            <appender-ref ref="WARN_FILE"/>
+            <appender-ref ref="ERROR_FILE"/>
+
+            <appender-ref ref="INFO_JSON_FILE"/>
+            <appender-ref ref="WARN_JSON_FILE"/>
+            <appender-ref ref="ERROR_JSON_FILE"/>
+        </root>
+
+        <logger name="dev.poporo.websocketchat" level="INFO"/>
+        <logger name="org.springframework" level="INFO"/>
+    </springProfile>
+</configuration>
