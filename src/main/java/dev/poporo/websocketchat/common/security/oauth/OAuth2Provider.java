@@ -1,4 +1,4 @@
-package dev.poporo.websocketchat.common.oauth;
+package dev.poporo.websocketchat.common.security.oauth;
 
 import lombok.RequiredArgsConstructor;
 

@@ -1,7 +1,7 @@
 package dev.poporo.websocketchat.domain.user.entity;
 
 import dev.poporo.websocketchat.common.BaseEntity;
-import dev.poporo.websocketchat.common.oauth.OAuth2Provider;
+import dev.poporo.websocketchat.common.security.oauth.OAuth2Provider;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
