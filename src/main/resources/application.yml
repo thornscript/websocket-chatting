@@ -7,3 +7,17 @@ spring:
 
   jpa:
     open-in-view: false
+
+server:
+  error:
+    whitelabel:
+      enabled: false
+
+app:
+  security:
+    jwt:
+      secret-key: "{cipher}803f9911093a54f6fe0cf7a880e1c1fa1f8a88b4f3faa4420f425aa358f257d40df21b1a67db3e0f350b82ba15908454a8506ee238ec648073dbbc91d0009f2b"
+      access-token:
+        validity-in-ms: 3600000 # 1시간
+      refresh-token:
+        validity-in-ms: 604800000 # 7일
