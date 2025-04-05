@@ -23,6 +23,8 @@ public class SecurityUser implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
+        // TODO: 현재는 권한이 비어있지만, 추후 권한 관련 전용 브랜치에서 구현 예정
+        // 주의: 빈 권한 목록은 Spring Security의 권한 기반 접근 제어를 무력화시킬 수 있음
         return List.of();
     }
 }
